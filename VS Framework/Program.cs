@@ -3,98 +3,48 @@ using System.Collections.Generic;
 
 class Program
 {
+    private int number = 0;
 
-    private string name;
-
-    private int number;
-
-    private string propertyExample { get; set; }
-
-    private string text = "This is some text ";
+    private List<string> randomWords = new List<string>();
 
     public void Run()
     {
-        /*
-        Console.WriteLine("Input name: ");
-        name = Console.ReadLine();
-        Console.WriteLine("Name: " + name);
-        
-        
-        Console.WriteLine("Input number: ");
-        //number = int.Parse(Console.ReadLine());
 
+        while(number < 5)
+        {
+            Console.WriteLine("Enter word number " + (number + 1) + ": ");
+            number++;
+            randomWords.Add(Console.ReadLine());
+        }
+
+        randomWords.Sort();
+
+        foreach (string word in randomWords)
+            Console.WriteLine(word);
+
+       /* while(number < 10)
+        {
+            Console.WriteLine("Number is currently " + number);
+            number++;
+            Console.WriteLine("Press any key to proceed...");
+            Console.ReadKey(); 
+        }
+
+        do
+        {
+            Console.WriteLine("Number is currently " + number);
+            number++;
+            Console.WriteLine("Press any key to proceed...");
+            Console.ReadKey(); 
+        } while (number < 10);
+
+        Console.WriteLine("Please enter a valid number: ");
         int numberCheck;
-        if(int.TryParse(Console.ReadLine(), out numberCheck) == true)
+        while (int.TryParse(Console.ReadLine(), out numberCheck) == false)
         {
-            number = numberCheck;
+            Console.WriteLine("Invalid Input! Please enter a vaild number: ");
         }
-
-        Console.WriteLine("Number: " + number);
-        
-        
-        //Input Conditional Experiment
-        string text;
-        text = Console.ReadLine();
-        if (text == "Y" || text == "y")
-        {
-            Console.WriteLine("You have selected Yes");
-        }
-        else if (text == "N" || text == "n")
-        {
-            Console.WriteLine("You have selected No");
-        }
-        else
-        {
-            Console.WriteLine("Invalid Selection");
-        }
-         
-
-        string newString;
-        newString = "Your name is " + name + " and your number is " + number.ToString();
-        Console.WriteLine(newString);
-        */
-        //welcomeMessage();
-        //Console.WriteLine("New number " + multiplyByTen(number));
-        //Console.WriteLine(getSomeText(text));
-        Console.WriteLine(calculation(17, 153, 13678));
-        
+        number = numberCheck;
+        Console.WriteLine("Number entered was " + number);*/
     }
-
-    private int calculation(int a, int b, int c)
-    {
-        if (a >= b){
-        return c;
-    }
-    else if (c > b * a)
-    {
-        return c * b;
-    }
-    else
-    {
-        return a;
-    }
-}
-
-    private void welcomeMessage()
-    {
-        Console.WriteLine("Greetings");
-    }
-
-    private int multiplyByTen(int thisNumber)
-    {
-        return thisNumber * 10;
-    }
-
-    private string getSomeText(string text)
-    {
-        text = text + Console.ReadLine();
-        return text;
-    }
-    // 4 - LERP
-    /*
-    private float lerp(float v0, float v1, float t)
-    {
-        return v0 * (v1 - v0) + t;
-    }
-     */
 }
